@@ -19,7 +19,7 @@ public class DateTester {
 					goodInput=true;
 				}
 				catch(IllegalArgumentException iEA){
-					System.out.println("Incorrect day, month or year.");
+					System.out.println("Incorrect day, month or year ok.");
 					
 					System.out.print("RE-ENTER VALID ARGUMENT FOR Day:");
 					setDayTo = keyboard.nextInt();
