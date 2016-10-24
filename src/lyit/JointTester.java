@@ -1,5 +1,6 @@
 package lyit;
-import java.util.*;
+//@SuppressWarnings("resource")
+//import java.util.*;
 public class JointTester {
 
 	public static void main(String[] args) {
