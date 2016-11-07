@@ -1,5 +1,5 @@
 package lyit;
-
+import java.util.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -19,16 +19,36 @@ public class BookFileHandler {
 		books = new ArrayList<Book>();
 	}
 
-	public void add(Book b) {
-		b = new Book();
+	public void add() {
+		Book b = new Book();
 		b.read();
-		books.add(b);
+		this.books.add(b);
 	}
 
 	public void list() {
 
 		for (Book tmpBook : books)
 			System.out.println(tmpBook);
+	}
+	
+	public void view(){
+		@SuppressWarnings("resource")
+		Scanner keyboard = new Scanner(System.in);		
+
+		// Read the number of the book to be viewed from the user
+		System.out.println("ENTER NUMBER OF BOOK : ");
+		String bookToView=keyboard.nextLine();
+		
+		// for every Book object in books
+	    for(Book tmpBook:books){
+		   // if it's number equals the number of the bookToView
+		   if(tmpBook.getIsbnNumber().equalsIgnoreCase(bookToView)){
+		      // display it
+			  System.out.println(tmpBook);
+			  break;
+			  //return tmpBook;
+			  }
+	    }
 	}
 
 	public void writeRecordsToFile() {

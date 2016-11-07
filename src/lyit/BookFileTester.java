@@ -20,11 +20,12 @@ public class BookFileTester {
 			// switch on the option and call the appropriate method
 			switch(menuObj.getOption()){
 			   case 1:bookFileHandler.add();break;
-			  // case 2:bookFileHandler.list();break;
-			 //  case 3:bookFileHandler.view();break;
-			 //  case 4:bookFileHandler.edit();break;
-			 //  case 5:bookFileHandler.delete();break;
-			 //  case 6:break;				
+			   case 2:bookFileHandler.list();break;
+			   case 3:bookFileHandler.view();break;
+			   
+			  // case 4:bookFileHandler.edit();break;
+			  // case 5:bookFileHandler.delete();break;
+			   case 6:break;				
 			   default:System.out.println("INVALID OPTION...");
 			}
 		}while(menuObj.getOption() != 6);	

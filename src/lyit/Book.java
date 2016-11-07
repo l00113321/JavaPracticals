@@ -9,7 +9,7 @@ public class Book {
 	private String publishingCompany;
 	private int libraryNumber;
 
-	private static int nextNumber = 1000; // static for unique number - starts
+	private static int nextNumber = 0000; // static for unique number - starts
 											// off at 1
 
 	// Default Constructor - set Instance Variables to null

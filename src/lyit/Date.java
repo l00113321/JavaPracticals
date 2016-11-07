@@ -1,6 +1,8 @@
 package lyit;
+import java.util.*;
+import java.io.Serializable;
 
-public class Date {
+public class Date implements Serializable{
 		
 		private int day;
 		private int month;
@@ -15,6 +17,19 @@ public class Date {
 			this.day = day;
 			this.month = month;
 			this.year = year;
+		}
+		
+		public void read(){
+			@SuppressWarnings("resource")
+			Scanner kbString = new Scanner(System.in);
+			System.out.println("Please Eeter Date Details :");
+			
+			System.out.println("Day :");
+			this.day = kbString.nextInt();
+			System.out.println("Month :");
+			this.month = kbString.nextInt();
+			System.out.println("Year :");
+			this.year = kbString.nextInt();
 		}
 
 		@Override

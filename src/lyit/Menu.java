@@ -1,7 +1,7 @@
 package lyit;
 import java.util.*;
 
-public class Menu {
+public class Menu extends BookFileHandler{
 	private int option;
 	   
 	   public void display(){

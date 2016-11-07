@@ -6,19 +6,19 @@ public class JointTester {
 	public static void main(String[] args) {
 		
 		// Create a Joint object called homerAndMargesJointAccount
-		Joint homerAndMargesJointAccount = new Joint("Mr", "Homer", "Simpson", "Mrs", "Marge", "Simpson", "Springfield, NYC", 5500.00, 25, 10, 1965);
+		Joint homerAndMargesJointAccount = new Joint(new Name("Mr", "Homer", "Sinpson"), new Name("Ms", "Marge", "Simpson"), new Address("747", "Evegreen", "Springfield", "Nyc"), 5500.00,new Date(1,2,3));
 								
 		// display homerAndMargesJointAccount's details on screen
 		System.out.println(homerAndMargesJointAccount);
 						
 		// Create a Joint object called lisaAndBartssJointAccount with initial values
-		Joint lisaAndBartssJointAccount = new Joint("Ms", "Lisa", "Simpson", "Mr", "Bart", "Simpson", "Springfield, NYC", 120.00, 20, 12, 1992);
+		Joint lisaAndBartssJointAccount = new Joint(new Name("Mr", "Bart", "Sinpson"), new Name("Ms", "Lisa", "Simpson"), new Address("747", "Evegreen", "Springfield", "Nyc"), 1500.00,new Date(1,2,3));
 								
 		// display lisaAndBartssJointAccount's details on screen
 		System.out.println(lisaAndBartssJointAccount);
 								
 		// change lisaAndBartssJointAccount's firstName to "Lisa-Marie"
-		lisaAndBartssJointAccount.getName().setFirstName("Lisa-Marie");
+		lisaAndBartssJointAccount.getNameTwo().setFirstName("Lisa-Marie");
 						
 		// display lisaAndBartssJointAccount's details on screen
 		System.out.println(lisaAndBartssJointAccount);
@@ -30,7 +30,7 @@ public class JointTester {
 		   System.out.println(homerAndMargesJointAccount + " is not the same account as " + lisaAndBartssJointAccount);
 						
 		// check if homerAndMargesJointAccount is female
-		if(homerAndMargesJointAccount.getName().isFemale() || homerAndMargesJointAccount.getNameB().isFemale())
+		if(homerAndMargesJointAccount.getNameOne().isFemale() || homerAndMargesJointAccount.getNameTwo().isFemale())
 		   System.out.println(homerAndMargesJointAccount + " has a female account holder.");			
 		else
 		   System.out.println(homerAndMargesJointAccount + " has no female account holder.");	

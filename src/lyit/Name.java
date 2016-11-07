@@ -1,6 +1,8 @@
 package lyit;
+import java.util.Scanner;
+import java.io.Serializable;
 
-public class Name {
+public class Name implements Serializable{
 	
 	private String title;
 	private String firstName;
@@ -15,6 +17,19 @@ public class Name {
 		this.title = title;
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}
+	
+	public void read(){
+		@SuppressWarnings("resource")
+		Scanner kbString = new Scanner(System.in);
+		System.out.println("Please Enter Name Details :");
+		
+		System.out.println("Title :");
+		this.title = kbString.nextLine();
+		System.out.println("First Name :");
+		this.firstName = kbString.nextLine();
+		System.out.println("Surname :");
+		this.lastName = kbString.nextLine();
 	}
 
 
