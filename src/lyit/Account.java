@@ -20,6 +20,11 @@ package lyit;
 		public double getBalance() {
 			return balance;
 		}
+		
+
+		public void setBalance(double s) {
+			this.balance = s;
+		}
 
 		
 		public abstract void deposit(double amount);

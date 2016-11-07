@@ -45,7 +45,6 @@ public class JointFileHandler {
 
 				System.out.println(tmpJoint);
 				break;
-
 			}
 		}
 	}
