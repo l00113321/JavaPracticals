@@ -1,6 +1,7 @@
 package lyit;
 
-//import java.util.Scanner;
+
+import java.util.Scanner;
 
 public class Joint extends Account {
 
@@ -21,6 +22,27 @@ public class Joint extends Account {
 		this.address = address;
 		this.balance = balance;
 		this.dateOpened = dateOpened;
+	}
+	
+	public void read(){
+		@SuppressWarnings("resource")
+		Scanner keyIn = new Scanner(System.in);
+
+		System.out.print("Please Enter Name Ones Details:");
+		System.out.print("Please Enter Name Ones Title:");
+		this.nameOne.setTitle(keyIn.nextLine());
+		System.out.print("Please Enter Name Ones First Name:");
+		this.nameOne.setFirstName(keyIn.nextLine());
+		System.out.print("Please Enter Name Ones Surname:");
+		this.nameOne.setLastName(keyIn.nextLine());
+		
+		System.out.print("Please Enter Name Twos Title:");
+		System.out.print("Please Enter Name Twos Title:");
+		this.nameTwo.setTitle(keyIn.nextLine());
+		System.out.print("Please Enter Name Twos First Name:");
+		this.nameTwo.setFirstName(keyIn.nextLine());
+		System.out.print("Please Enter Name Twos Surname:");
+		this.nameTwo.setLastName(keyIn.nextLine());
 	}
 
 	
@@ -113,7 +135,7 @@ public class Joint extends Account {
 	@Override
 	public String toString() {
 
-		return "nameOne=" + nameOne + ", nameTwo=" + nameTwo + ", addressOne=" + address + ", accountNumber=" + accountNumber + ", balance=" + balance + ", dateOpened=" + dateOpened;
+		return "nameOne=" + nameOne + ", nameTwo=" + nameTwo +" "+ address + ", accountNumber=" + accountNumber + ", balance=" + balance + ", dateOpened=" + dateOpened;
 	}
 
 }

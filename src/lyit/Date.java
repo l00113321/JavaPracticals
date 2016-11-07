@@ -2,7 +2,7 @@ package lyit;
 import java.util.*;
 import java.io.Serializable;
 
-public class Date implements Serializable{
+public class Date implements {
 		
 		private int day;
 		private int month;
