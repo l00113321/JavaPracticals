@@ -7,6 +7,13 @@ package lyit;
 		protected int accountNumber;
 		protected double balance;
 		
+		public Account(){
+			accountNumber = startingNumber;
+			startingNumber++;
+			balance = 0;
+		}
+		
+		
 		public abstract void createAccountNumber();
 
 		

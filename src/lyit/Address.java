@@ -7,20 +7,11 @@ public class Address {
 		private String town;
 		private String county;
 		
-		/**
-		 * Default constructor
-		 */
 		public Address() {
 			this(null, null, null, null);
 		}
 		
-		/**
-		 * Loaded constructor
-		 * @param name
-		 * @param street
-		 * @param town
-		 * @param county
-		 */
+		
 		public Address(String name, String street, String town, String county) {
 			
 			this.name = name;
@@ -29,11 +20,7 @@ public class Address {
 			this.county = county;
 		}
 		
-		/**
-		 * Method to compare 2 Address objects
-		 * @param address
-		 * @return boolean true or false
-		 */
+		
 		public boolean equals(Address address) {
 			
 			if (address.name.equals(name) && address.street.equals(street) && address.town.equals(town) && address.county.equals(county)) {

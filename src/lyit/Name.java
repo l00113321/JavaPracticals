@@ -1,12 +1,11 @@
 package lyit;
 import java.util.Scanner;
-import java.io.Serializable;
 
-public class Name implements Serializable{
+public class Name{
 	
-	private String title;
-	private String firstName;
-	private String lastName;
+	protected String title;
+	protected String firstName;
+	protected String lastName;
 	
 	public Name(){
 		
@@ -81,8 +80,4 @@ public class Name implements Serializable{
 		else
 		    return false;
 	}	
-			
-	
-	
-
 }

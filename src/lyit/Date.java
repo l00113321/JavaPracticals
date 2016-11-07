@@ -1,8 +1,7 @@
 package lyit;
-import java.util.*;
-import java.io.Serializable;
+import java.util.Scanner;
 
-public class Date implements {
+public class Date  {
 		
 		private int day;
 		private int month;
