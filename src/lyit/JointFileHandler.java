@@ -36,7 +36,7 @@ public class JointFileHandler {
 		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 
-		System.out.println("ENTER NUMBER OF JOINT ACCOUNT : ");
+		System.out.println("ENTER JOINT ACCOUNT NUMBER : ");
 		int jointToView = keyboard.nextInt();
 
 		for (Joint tmpJoint : joints) {

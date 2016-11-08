@@ -1,5 +1,4 @@
 package lyit;
-import java.util.Scanner;
 
 public class Name{
 	
