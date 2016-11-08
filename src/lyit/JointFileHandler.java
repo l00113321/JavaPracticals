@@ -41,18 +41,17 @@ public class JointFileHandler {
 
 		for (Joint tmpJoint : joints) {
 
-			if (tmpJoint.equals(jointToView)) {
+			if (tmpJoint.getAccountNumber() == jointToView) {
 
 				System.out.println(tmpJoint);
 				return tmpJoint;
-				
+
 			}
 		}
 		return null;
 	}
 
 	public void edit() {
-		// Call view() to find, display, & return the book to edit
 		view();
 		for (Joint j : joints) {
 			if (j != null) {

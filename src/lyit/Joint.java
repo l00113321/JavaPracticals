@@ -2,6 +2,7 @@ package lyit;
 
 import java.util.Scanner;
 
+
 public class Joint extends Account {
 
 	private Name nameOne;
@@ -19,13 +20,13 @@ public class Joint extends Account {
 		this.address = address;
 		this.balance = balance;
 		this.dateOpened = dateOpened;
-		createAccountNumber();
+		//createAccountNumber();
 	}
 
 	public void read(){
 		@SuppressWarnings("resource")
 		Scanner kbString = new Scanner(System.in);
-		String t1, fn1, ln1, t2, fn2, ln2, name, street, town, county;
+		String t1, fn1, ln1, t2, fn2, ln2, number, street, town, county;
 		int day, month, year;
 		Name name1 = new Name();
 		Name name2 = new Name();
@@ -59,8 +60,8 @@ public class Joint extends Account {
 		System.out.println("Please Enter Address :");
 		
 		System.out.println("Name :");
-		name=kbString.nextLine();
-		address.setName(name);
+		number=kbString.nextLine();
+		address.setName(number);
 		System.out.println("Street :");
 		street=kbString.nextLine();
 		address.setStreet(street);
@@ -167,11 +168,13 @@ public class Joint extends Account {
 		return account.nameOne.equals(nameOne) && account.nameTwo.equals(nameTwo) && account.address.equals(address)
 				&& account.dateOpened.equals(dateOpened);
 	}
-
-	@Override
+	
+	
+	//@Override
 	public String toString() {
-		return "Joint [nameOne=" + " "+nameOne + ", nameTwo=" + nameTwo + ", address=" + address + ", dateOpened="
+		return "Joint [nameOne=" + " "+nameOne+" "+", nameTwo=" + nameTwo+" "+", address=" + address + ", dateOpened="
 				+ dateOpened + ", accountNumber=" + accountNumber + ", balance=" + balance + "]";
+		
 	}
 
 	
