@@ -32,7 +32,7 @@ public class JointFileHandler {
 			System.out.println(tmpJoint);
 	}
 
-	public void view() {
+	public Joint view() {
 		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 
@@ -41,12 +41,14 @@ public class JointFileHandler {
 
 		for (Joint tmpJoint : joints) {
 
-			if (tmpJoint.getAccountNumber() == jointToView) {
+			if (tmpJoint.equals(jointToView)) {
 
 				System.out.println(tmpJoint);
-				break;
+				return tmpJoint;
+				
 			}
 		}
+		return null;
 	}
 
 	public void edit() {

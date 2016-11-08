@@ -2,8 +2,6 @@ package lyit;
 
 import java.util.Scanner;
 
-
-
 public class Joint extends Account {
 
 	private Name nameOne;
@@ -21,7 +19,7 @@ public class Joint extends Account {
 		this.address = address;
 		this.balance = balance;
 		this.dateOpened = dateOpened;
-
+		createAccountNumber();
 	}
 
 	public void read(){
@@ -65,13 +63,13 @@ public class Joint extends Account {
 		address.setName(name);
 		System.out.println("Street :");
 		street=kbString.nextLine();
-		address.setName(street);
+		address.setStreet(street);
 		System.out.println("Town :");
 		town=kbString.nextLine();
-		address.setName(town);
+		address.setTown(town);
 		System.out.println("County :");
 		county=kbString.nextLine();
-		address.setName(county);
+		address.setCounty(county);
 		
 		System.out.println("Please Enter The Balance :");
 		balance = kbString.nextDouble();
@@ -88,7 +86,7 @@ public class Joint extends Account {
 		System.out.println("Year :");
 		year = kbString.nextInt();
 		d1.setYear(year);	
-		Joint j1 = new Joint(new Name(t1, fn1, ln1), new Name(t2, fn2, ln2), new Address(name, street, town, county), balance, new Date(day, month, year));
+		//Joint j1 = new Joint(new Name(t1, fn1, ln1), new Name(t2, fn2, ln2), new Address(name, street, town, county), balance, new Date(day, month, year));
 
 	}
 
@@ -172,7 +170,7 @@ public class Joint extends Account {
 
 	@Override
 	public String toString() {
-		return "Joint [nameOne=" + " " + nameOne.getTitle()+ " "+nameOne.getFirstName() + " "+nameOne.getLastName() + ", nameTwo=" + nameTwo + ", address=" + address + ", dateOpened="
+		return "Joint [nameOne=" + " "+nameOne + ", nameTwo=" + nameTwo + ", address=" + address + ", dateOpened="
 				+ dateOpened + ", accountNumber=" + accountNumber + ", balance=" + balance + "]";
 	}
 
