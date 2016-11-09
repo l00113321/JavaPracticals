@@ -25,7 +25,6 @@ public class Current extends Account {
 		overdraftSet = overdraft;
 	}
 
-	
 	public Name getName() {
 
 		return name;
