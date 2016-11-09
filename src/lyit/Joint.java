@@ -1,15 +1,17 @@
 package lyit;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 
-public class Joint extends Account {
+public class Joint extends Account implements Serializable{
 
 	private Name nameOne;
 	private Name nameTwo;
 	private Address address;
 	private Date dateOpened;
 
+	private static final long serialVersionUID = 1L;
 	public Joint() {
 		this(null, null, null, 0, null);
 	}
@@ -44,6 +46,7 @@ public class Joint extends Account {
 		System.out.println("Surname :");
 		ln1=kbString.nextLine();
 		name1.setLastName(ln1);
+		this.setNameOne(name1);
 		
 		System.out.println("Please Enter Cumtomer 2's Details :");
 		
@@ -56,6 +59,7 @@ public class Joint extends Account {
 		System.out.println("Surname :");
 		ln2=kbString.nextLine();
 		name2.setLastName(ln2);
+		this.setNameTwo(name2);
 		
 		System.out.println("Please Enter Address :");
 		
@@ -71,6 +75,7 @@ public class Joint extends Account {
 		System.out.println("County :");
 		county=kbString.nextLine();
 		address.setCounty(county);
+		this.setAddress(address);
 		
 		System.out.println("Please Enter The Balance :");
 		balance = kbString.nextDouble();
@@ -86,9 +91,8 @@ public class Joint extends Account {
 		
 		System.out.println("Year :");
 		year = kbString.nextInt();
-		d1.setYear(year);	
-		//Joint j1 = new Joint(new Name(t1, fn1, ln1), new Name(t2, fn2, ln2), new Address(name, street, town, county), balance, new Date(day, month, year));
-
+		d1.setYear(year);
+		this.setDateOpened(d1);
 	}
 
 	public Name getNameOne() {
@@ -172,8 +176,8 @@ public class Joint extends Account {
 	
 	//@Override
 	public String toString() {
-		return "Joint [nameOne=" + " "+nameOne+" "+", nameTwo=" + nameTwo+" "+", address=" + address + ", dateOpened="
-				+ dateOpened + ", accountNumber=" + accountNumber + ", balance=" + balance + "]";
+		return "Joint Account Number "  + accountNumber +" : " +" Account Holder 1 =" + " "+nameOne+" "+", Account Holder 2 = " + nameTwo+" "+", " + address + ", Opened on ="
+				+ dateOpened +  ", Balance =" + balance + "]";
 		
 	}
 

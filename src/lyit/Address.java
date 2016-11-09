@@ -1,11 +1,15 @@
 package lyit;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable{
 
 		private String name;
 		private String street;
 		private String town;
 		private String county;
+		
+		private static final long serialVersionUID = 1L;
 		
 		public Address() {
 			this(null, null, null, null);
@@ -72,7 +76,7 @@ public class Address {
 
 		@Override
 		public String toString() {
-			return "Address: name/number=" + name + ", street=" + street + ", town=" + town + ", county=" + county + "\n";
+			return "Address : Name/Number =" + name + ", Street =" + street + ", Town =" + town + ", County =" + county + "\n";
 		}
 	}
 

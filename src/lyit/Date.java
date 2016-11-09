@@ -1,12 +1,14 @@
 package lyit;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Date  {
+public class Date  implements Serializable{
 		
 		private int day;
 		private int month;
 		private int year;
 		
+		private static final long serialVersionUID = 1L;
 		public Date(){
 			day=month=year=0;
 		}

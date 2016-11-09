@@ -1,11 +1,14 @@
 package lyit;
 
-public class Name{
+import java.io.Serializable;
+
+public class Name implements Serializable{
 	
 	protected String title;
 	protected String firstName;
 	protected String lastName;
 	
+	private static final long serialVersionUID = 1L;
 	public Name(){
 		
 	}
@@ -55,8 +58,9 @@ public class Name{
 	
 	public boolean equals(Name n){
 		   return( firstName.equals(n.firstName) &&
-	              lastName.equals(n.lastName));
+				   lastName.equals(n.lastName));
 	}
+	
 	
 	public boolean isFemale(){
 		if(title.equalsIgnoreCase("Miss") || 

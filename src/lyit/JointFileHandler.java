@@ -14,7 +14,7 @@ public class JointFileHandler {
 	private ArrayList<Joint> joints;
 	private ObjectOutputStream os;
 	private ObjectInputStream is;
-	private File file = new File("Bank/joint.bin");
+	private File file = new File("joint.bin");
 
 	public JointFileHandler() {
 		joints = new ArrayList<Joint>();
@@ -32,7 +32,7 @@ public class JointFileHandler {
 			System.out.println(tmpJoint);
 	}
 
-	public Joint view() {
+	public void view() {
 		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 
@@ -44,33 +44,36 @@ public class JointFileHandler {
 			if (tmpJoint.getAccountNumber() == jointToView) {
 
 				System.out.println(tmpJoint);
-				return tmpJoint;
-
+				break;
 			}
 		}
-		return null;
 	}
 
 	public void edit() {
-		view();
+		list();
 		for (Joint j : joints) {
 			if (j != null) {
 				int index = joints.indexOf(j);
 				j.read();
 				joints.set(index, j);
-			}
-
+				break;
+			}	
 		}
 	}
 
 	public void delete() {
-		view();
-
+		
+		@SuppressWarnings("resource")
+		Scanner keyboard = new Scanner(System.in);
+		list();
+		System.out.println("ENTER JOINT ACCOUNT NUMBER TO DELETE : ");
+		int jointToView = keyboard.nextInt();
+		
 		for (Joint j : joints) {
-			if (j != null) {
-				joints.remove(j);
-			}
-
+			if (j.getAccountNumber() == jointToView) {	
+				this.joints.remove(j);
+				break;
+			}	
 		}
 	}
 
@@ -78,7 +81,7 @@ public class JointFileHandler {
 		try {
 			os = new ObjectOutputStream(new FileOutputStream(file));
 			os.writeObject(joints);
-			;
+	
 		} catch (Exception e) {
 
 			System.out.println(e.getMessage());

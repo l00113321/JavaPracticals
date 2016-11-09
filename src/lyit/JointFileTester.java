@@ -25,8 +25,8 @@ public class JointFileTester {
 				   case 2:jointFileHandler.list();break;
 				   case 3:jointFileHandler.view();break;
 				   
-				  // case 4:bookFileHandler.edit();break;
-				  // case 5:bookFileHandler.delete();break;
+				  case 4:jointFileHandler.edit();break;
+				  case 5:jointFileHandler.delete();break;
 				   case 6:break;				
 				   default:System.out.println("INVALID OPTION...");
 				}
@@ -37,20 +37,21 @@ public class JointFileTester {
 			//jointFileHandler.writeRecordsToFile();
 
 
-			// OLD BookFileTester code //
+	
+		// OLD BookFileTester code //
 
 			// Call the add() method twice, to add two books
 			//bookFileHandler.add();
 			//bookFileHandler.add();
 
 			// Write the ArrayList to the File
-			//bookFileHandler.writeRecordsToFile();
+			jointFileHandler.writeRecordsToFile();
 
 			// Read the ArrayList from the File back into the ArrayList books
-			//bookFileHandler.readRecordsFromFile();
+			jointFileHandler.readRecordsFromFile();
 		
 			// Call the list() method to list the Book objects in the ArrayList
-			//bookFileHandler.list();
+			jointFileHandler.list();
 		}
 
 	}
