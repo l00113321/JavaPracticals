@@ -15,7 +15,7 @@ public class Joint extends Account implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public Joint() {
-		//this(null, null, null, 0, null);
+		// this(null, null, null, 0, null);
 		nameOne = new Name();
 		nameTwo = new Name();
 		address = new Address();
@@ -30,92 +30,116 @@ public class Joint extends Account implements Serializable {
 		this.dateOpened = dateOpened;
 	}
 
-	public void read(){
+	public void read() {
 		@SuppressWarnings("resource")
 		Scanner kbString = new Scanner(System.in);
 		String t1, fn1, ln1, t2, fn2, ln2, number, street, town, county;
 		int day, month, year;
 		Address address = new Address();
 		Date d1 = new Date();
-		
+
 		System.out.println("Please Enter Cumtomer 1's Details :");
 		boolean validInput = false;
-		do{
-			try{
+		do {
+			
+			try {		
 				System.out.println("Title :");
-				t1=kbString.nextLine();
+				t1 = kbString.nextLine();
 				nameOne.setTitle(t1);
-				System.out.println("First Name :");
-				fn1=kbString.nextLine();
-				nameOne.setFirstName(fn1);
-				System.out.println("Surname :");
-				ln1=kbString.nextLine();
-				nameOne.setLastName(ln1);		
 				validInput = true;
-			}catch(IllegalArgumentException iao)
-			{
+			} catch (IllegalArgumentException iao) {
 				System.out.println("Please Enter Mr, Mrs, Ms, Miss");
 				validInput = false;
 			}
-		}while(!validInput);
-		System.out.println("Please Enter Cumtomer 2's Details :");
-	//	boolean validInput = false;
-		do{
-			try{
-		System.out.println("Title :");
-		t2=kbString.nextLine();	
-		nameTwo.setTitle(t2);
+		} while (validInput == false);
+		
+
 		System.out.println("First Name :");
-		fn2=kbString.nextLine();
+		fn1 = kbString.nextLine();
+		nameOne.setFirstName(fn1);
+		System.out.println("Surname :");
+		ln1 = kbString.nextLine();
+		nameOne.setLastName(ln1);
+
+		System.out.println("Please Enter Cumtomer 2's Details :");
+		
+		do {
+			validInput = false;
+			try {
+				System.out.println("Title :");
+				t2 = kbString.nextLine();
+				nameOne.setTitle(t2);
+				validInput = true;
+			} catch (IllegalArgumentException iao) {
+				System.out.println("Please Enter Mr, Mrs, Ms, Miss");
+				validInput = false;
+			}
+		} while (validInput == false);
+		System.out.println("First Name :");
+		fn2 = kbString.nextLine();
 		nameTwo.setFirstName(fn2);
 		System.out.println("Surname :");
-		ln2=kbString.nextLine();
+		ln2 = kbString.nextLine();
 		nameTwo.setLastName(ln2);
-			}catch(IllegalArgumentException iao)
-			{
-				System.out.println("Please Enter Mr, Mrs, Ms, Miss");
-				validInput = false;
-			}
-		}while(!validInput);
-		
-		
+
 		System.out.println("Please Enter Address :");
-		
+
 		System.out.println("Name :");
-		number=kbString.nextLine();
+		number = kbString.nextLine();
 		address.setName(number);
 		System.out.println("Street :");
-		street=kbString.nextLine();
+		street = kbString.nextLine();
 		address.setStreet(street);
 		System.out.println("Town :");
-		town=kbString.nextLine();
+		town = kbString.nextLine();
 		address.setTown(town);
 		System.out.println("County :");
-		county=kbString.nextLine();
+		county = kbString.nextLine();
 		address.setCounty(county);
 		this.setAddress(address);
-		
+
 		System.out.println("Please Enter The Balance :");
 		balance = kbString.nextDouble();
-		
+
 		System.out.println("Please Enter The Date opened :");
-		do{
-			try{
-		System.out.println("Day :");
-		day = kbString.nextInt();
-		d1.setDay(day);
-			}catch (IllegalArgumentException iae) {
+		do {
+			validInput = false;
+			try {
+				System.out.println("Day :");
+				day = kbString.nextInt();
+				d1.setDay(day);
+				validInput = true;
+			} catch (IllegalArgumentException iao) {
 				System.out.println("Please Enter Day Between 1 and 31");
+				validInput = false;
 			}
-		}while(!validInput);
-		System.out.println("Month :");
-		month = kbString.nextInt();
-		d1.setMonth(month);
+		} while (validInput == false);
 		
-		System.out.println("Year :");
-		year = kbString.nextInt();
-		d1.setYear(year);
-		this.setDateOpened(d1);
+		do {
+			validInput = false;
+			try {
+				System.out.println("Month :");
+				month = kbString.nextInt();
+				d1.setMonth(month);
+				validInput = true;
+			} catch (IllegalArgumentException iao) {
+				System.out.println("Please Enter Month Between 1 and 12");
+				validInput = false;
+			}
+		} while (validInput == false);
+
+		do {
+			validInput = false;
+			try {
+				System.out.println("Year :");
+				year = kbString.nextInt();
+				d1.setYear(year);
+				validInput = true;
+			} catch (IllegalArgumentException iao) {
+				System.out.println("Please Enter Year Higher than 1900");
+				validInput = false;
+			}
+		} while (validInput == false);
 	}
 
 	public Name getNameOne() {
