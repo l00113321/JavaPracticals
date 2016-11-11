@@ -1,9 +1,8 @@
 package lyit;
 
-import java.io.Serializable;
+import java.io.Serializable; 
 import java.util.Scanner;
 
-import com.sun.xml.internal.ws.api.pipe.PipelineAssembler;
 
 public class Joint extends Account implements Serializable {
 
