@@ -1,3 +1,5 @@
+//Dermot McGee l00113321
+
 package lyit;
 
 public class Current extends Account {
@@ -13,7 +15,6 @@ public class Current extends Account {
 		createAccountNumber();
 	}
 
-	
 	public Current(Name name, Address address, double balance, double overdraft, Date dateOpened) {
 		this.name = name;
 		this.address = address;
@@ -30,7 +31,6 @@ public class Current extends Account {
 		return name;
 	}
 
-	
 	public void setName(Name name) {
 
 		this.name = name;
@@ -41,7 +41,6 @@ public class Current extends Account {
 		return address;
 	}
 
-	
 	public void setAddress(Address address) {
 
 		this.address = address;
@@ -53,7 +52,6 @@ public class Current extends Account {
 		this.accountNumber = Account.startingNumber++;
 	}
 
-	
 	@Override
 	public void deposit(double amount) {
 
@@ -110,7 +108,6 @@ public class Current extends Account {
 
 		} else if (balance > 0) {
 
-			
 			if (amount > balance) {
 
 				withdraw -= balance;
@@ -127,25 +124,21 @@ public class Current extends Account {
 		return 0;
 	}
 
-	
 	public int getAccountNumber() {
 
 		return this.accountNumber;
 	}
 
-	
 	public Date getDateOpened() {
 
 		return dateOpened;
 	}
 
-	
 	public double getOverdraft() {
 
 		return overdraft;
 	}
 
-	
 	public void setOverdraft(double overdraft) {
 
 		this.overdraft = overdraft;
@@ -156,13 +149,11 @@ public class Current extends Account {
 		return account.name.equals(name) && account.address.equals(address) && account.dateOpened.equals(dateOpened);
 	}
 
-	
 	@Override
 	public String toString() {
 
-		return "Current [name=" + name + ", address=" + address + ", accountNumber=" + accountNumber + ", dateOpened=" + dateOpened + ", balance=" + balance + ", overdraft=" + overdraft + "]";
+		return "Current [name=" + name + ", address=" + address + ", accountNumber=" + accountNumber + ", dateOpened="
+				+ dateOpened + ", balance=" + balance + ", overdraft=" + overdraft + "]";
 	}
 
 }
-
-

@@ -1,3 +1,5 @@
+//Dermot McGee l00113321
+
 package lyit;
 
 import java.io.File;
@@ -57,23 +59,23 @@ public class JointFileHandler {
 				j.read();
 				joints.set(index, j);
 				break;
-			}	
+			}
 		}
 	}
 
 	public void delete() {
-		
+
 		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 		list();
 		System.out.println("ENTER JOINT ACCOUNT NUMBER TO DELETE : ");
 		int jointToView = keyboard.nextInt();
-		
+
 		for (Joint j : joints) {
-			if (j.getAccountNumber() == jointToView) {	
+			if (j.getAccountNumber() == jointToView) {
 				this.joints.remove(j);
 				break;
-			}	
+			}
 		}
 	}
 
@@ -81,7 +83,7 @@ public class JointFileHandler {
 		try {
 			os = new ObjectOutputStream(new FileOutputStream(file));
 			os.writeObject(joints);
-	
+
 		} catch (Exception e) {
 
 			System.out.println(e.getMessage());

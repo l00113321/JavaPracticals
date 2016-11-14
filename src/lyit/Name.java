@@ -1,6 +1,9 @@
+//Dermot McGee l00113321
+
 package lyit;
 
 import java.io.Serializable;
+
 
 public class Name implements Serializable {
 
@@ -30,9 +33,8 @@ public class Name implements Serializable {
 	public void setTitle(String title) throws IllegalArgumentException {
 		if (title.equals("Mr") || title.equals("Miss") || title.equals("Mrs") || title.equals("Ms")) {
 			this.title = title;
-		}
-		else
-			throw error;	
+		} else
+			throw error;
 	}
 
 	public String getFirstName() {
