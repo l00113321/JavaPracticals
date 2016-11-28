@@ -2,6 +2,7 @@ package lyit;
 import java.util.*;
 public class AccountFactoryTester {
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner keyIn = new Scanner(System.in);
 		AccountFactory accountFactory = new AccountFactory();
 		
