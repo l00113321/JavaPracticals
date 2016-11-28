@@ -16,8 +16,7 @@ public class FactoryAccountTester {
 		      Account account2 = accountFactory.getAccount(accType2);
 		      
 		      account.read();
-		      account2.read();
-		     
+		      account2.read();		     
 		}
 	}
 
