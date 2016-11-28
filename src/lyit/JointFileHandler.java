@@ -11,7 +11,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class JointFileHandler {
+public class JointFileHandler implements JointDao {
 
 	private ArrayList<Joint> joints;
 	private ObjectOutputStream os;

@@ -2,13 +2,17 @@
 
 package lyit;
 
-public class Current extends Account {
+import java.io.Serializable;
+
+public class Current extends Account implements Serializable{
 	private Name name;
 	private Address address;
 	private int accountNumber;
 	private Date dateOpened;
 	private double overdraftSet;
 	private double overdraft;
+	
+	private static final long serialVersionUID = 1L;
 
 	public Current() {
 		this(null, null, 0, 0, null);
