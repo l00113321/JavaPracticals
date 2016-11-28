@@ -11,10 +11,11 @@ public class Joint extends Account implements Serializable {
 	private Address address;
 	private Date dateOpened;
 	private boolean validInput = false;
+	private static Joint singleInstance;
 
 	private static final long serialVersionUID = 1L;
 
-	public Joint() {
+	private Joint() {
 		// this(null, null, null, 0, null);
 		nameOne = new Name();
 		nameTwo = new Name();
@@ -22,12 +23,24 @@ public class Joint extends Account implements Serializable {
 		dateOpened = new Date();
 	}
 
-	public Joint(Name nameOne, Name nameTwo, Address address, double balance, Date dateOpened) {
+	private Joint(Name nameOne, Name nameTwo, Address address, double balance, Date dateOpened) {
 		this.nameOne = nameOne;
 		this.nameTwo = nameTwo;
 		this.address = address;
 		this.balance = balance;
 		this.dateOpened = dateOpened;
+	}
+	
+	public static Joint getSingleInstance(){
+		if(singleInstance == null){
+			singleInstance = new Joint();
+			System.out.println("Single object created"+ singleInstance);
+		}
+			return singleInstance; 
+		}
+	
+	public void displayJoint(){
+		System.out.println("Single object created"+ singleInstance);
 	}
 
 	public void read() {
