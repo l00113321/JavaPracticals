@@ -155,5 +155,8 @@ public class Current extends Account {
 		return "Current [name=" + name + ", address=" + address + ", accountNumber=" + accountNumber + ", dateOpened="
 				+ dateOpened + ", balance=" + balance + ", overdraft=" + overdraft + "]";
 	}
+	public void read(){
+		System.out.println("current");
+	}
 
 }
